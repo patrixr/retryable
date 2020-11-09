@@ -63,7 +63,7 @@ export function retryable<T extends AnyFunction = AnyFunction>(func: T, opts: Re
         throw e; // the last iteration failed, we forward the error
       }
       return (await sequence([  // we try again
-        () => fire("before", "retry", ...args),
+        () => fire("before", "retry", e),
         () => retryer(counter - 1, ...args),
         () => fire("after", "retry", ...args)
       ]))[1];
