@@ -22,8 +22,8 @@ await funcB();
 ### Running code before the retry
 
 ```typescript
-const funcC = retryable(func).before("retry", async (...args) => {
-  console.log(`funcC is about to be retried again with arguments ${args}`)
+const funcC = retryable(func).before("retry", async (err) => {
+  console.log(`funcC is about to be retried after the error ${err} occured`)
   await doSomethingBeforeFuncC();
 })
 
