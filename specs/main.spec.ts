@@ -38,7 +38,7 @@ describe('Retryable', () => {
     }, { times: 3 });
 
     await safe(func);
-    expect(count).to.equal(3)
+    expect(count).to.equal(4)
   });
 
 
@@ -50,7 +50,7 @@ describe('Retryable', () => {
     });
 
     await safe(func);
-    expect(count).to.equal(1)
+    expect(count).to.equal(2)
   });
 
   it('returns the result of the first successful attempt', async () => {

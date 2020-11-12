@@ -16,7 +16,7 @@
         "-r", "ts-node/register", "'specs/**/*.spec.ts'"
       ],
       "env": {
-        "TS_NODE_PROJECT": "tsconfig.spec.json"
+        "TS_NODE_PROJECT": "specs/tsconfig.json"
       }
     }
   ]

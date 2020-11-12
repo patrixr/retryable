@@ -59,7 +59,7 @@ export function retryable<T extends AnyFunction = AnyFunction>(func: T, opts: Re
     try {
       return await func(...args)
     } catch (e) {
-      if (counter <= 1) {
+      if (counter === 0) {
         throw e; // the last iteration failed, we forward the error
       }
       return (await sequence([  // we try again
